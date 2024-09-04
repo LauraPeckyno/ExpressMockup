@@ -10,6 +10,7 @@ const contactData = require('./models/contactData');
 const servicesData = require('./models/servicesData');
 const aboutData = require('./models/aboutData');
 const homeData = require('./models/homeData');
+const filteredservicesData = require('./models/filteredservicesData');
 
 // middleware
 app.use((req, res, next) => {
@@ -56,7 +57,22 @@ app.get('/about', (req, res) => {
 
 app.get('/services', (req, res) => {
   res.render('services', { servicesData });  // rendering the data for this view
-  console.log(servicesData);
+});
+
+// adding a query option for the services
+app.get('/filteredservicesdata', (req, res) => {
+  const query = req.query;
+  let filteredServices = filteredservicesData.serviceOptions;
+
+  if (query.name) {
+    filteredServices = filteredServices.filter((service) => service.name.toLowerCase().includes(query.name.toLowerCase()));
+  }
+
+  if (query.description) {
+    filteredServices = filteredServices.filter((service) => service.description.toLowerCase().includes(query.description.toLowerCase()));
+  }
+
+  res.render('filteredservicesdata', { filteredservicesData, filteredServices });
 });
 
 app.post('/contact', (req, res) => {

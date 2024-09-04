@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title><%= filteredservicesData.title %></title>
+        <meta name="description" content>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <div class="head">
+            <div class="menu">
+                <div class="menuPush">
+                    <a href="/home"><div class="button">Home</div></a>
+                    <a href="/about"><div class="button">About</div></a>
+                    <a href="/services"><div class="button">Services</div></a>
+                    <a href="/contact"><div class="button">Contact</div></a>
+                </div>
+                <div class="logo"><img
+                        src="https://cdn.myportfolio.com/587132521eca77539c33727505c79a3e/a94af245-795e-4986-adf2-b19fd16c7851_rw_1200.png?h=fc90dbf5ab55dd9ccac9227140d55444"
+                        width="350px" height="200px" /></div>
+            </div>
+            <div class="headerImage"></div>
+        </div>
+        <h1><%= filteredservicesData.title %></h1>
+        <div class="outerContainer">
+                <p><%= filteredservicesData.introText
+                    %></p>
+                    <ul>
+                        <% filteredServices.forEach((item) => { %>
+                          <li>
+                            <h2><%= item.name %></h2>
+                            <p><%= item.description %></p>
+                          </li>
+                        <% }); %>
+                      </ul>
+            
+            </div>
+        <script src async defer></script>
+    </body>
+</html>
