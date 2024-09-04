@@ -11,17 +11,19 @@ const servicesData = require('./models/servicesData');
 const aboutData = require('./models/aboutData');
 const homeData = require('./models/homeData');
 
-  // middleware
-  app.use((req,res,next)=>{
-    console.log("middleware #1")
-    next()
-  });
+// middleware
+app.use((req, res, next) => {
+  console.log("middleware #1")
+  next()
+});
 
-  app.use((req,res,next)=>{
-    console.log("I'm middleware too")
-    next()
-  });
+app.use((req, res, next) => {
+  console.log("I'm middleware too")
+  next()
+});
 
+// middleware to handle the request body
+app.use(express.urlencoded({ extended: true }));
 
 // view engine
 const ejs = require("ejs");
@@ -37,23 +39,31 @@ app.use(express.static("./styles"));
 
 // route for base folder
 app.get('/', (req, res) => {
-    res.send("this is the base folder")
+  res.send("this is the base folder")
 });
 
 // creating routes for the other paths
 app.get('/home', (req, res) => {
-    res.render('home' , { homeData });  // // rendering the data for this view
+  res.render('home', { homeData });  // // rendering the data for this view
 });
 app.get('/contact', (req, res) => {
-    res.render('contact' , { contactData });  // rendering the data for this view
+  res.render('contact', { contactData });  // rendering the data for this view
 });
 
 app.get('/about', (req, res) => {
-    res.render('about', { aboutData });  // rendering the data for this view
+  res.render('about', { aboutData });  // rendering the data for this view
 });
 
 app.get('/services', (req, res) => {
-    res.render('services' , { servicesData });  // rendering the data for this view
+  res.render('services', { servicesData });  // rendering the data for this view
+});
+
+app.post('/contact', (req, res) => {
+  const { name, email, message } = req.body;
+  // Save the data to your contactData model
+  const contactFormData = require('./models/contactFormData');
+  contactFormData.push({ name, email, message });
+  res.send(`Thank you, ${name}! Your message has been sent. <a href="/contact">Click here</a> to return to the site.`);
 });
 
 // 404 Middleware
@@ -62,6 +72,6 @@ app.use((req, res) => {
 });
 
 // tell the server to listen for data requests
-app.listen ('3000', () => {
-    console.log(`Server is now running on port ${PORT}`);
+app.listen('3000', () => {
+  console.log(`Server is now running on port ${PORT}`);
 });

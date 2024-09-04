@@ -1,11 +1,11 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: rgba(222, 184, 135, 0.356);
-    color:black;
+    color: black;
 }
 
 h1 {
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     font-size: 32px;
     font-weight: bold;
     background-color: darkcyan;
@@ -19,11 +19,11 @@ p {
 }
 
 .menu {
-    display:flex;
-    justify-content:space-between;
+    display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     background-color: white;
-    color:black;
+    color: black;
     text-align: center;
     padding: 15px;
     align-content: center;
@@ -32,11 +32,11 @@ p {
 }
 
 .menuPush {
-    display:flex;
-    justify-content:flex-start;
+    display: flex;
+    justify-content: flex-start;
     flex-wrap: wrap;
     background-color: white;
-    color:black;
+    color: black;
     text-align: center;
     padding: 15px;
     align-content: center;
@@ -45,7 +45,7 @@ p {
 
 .button {
     background-color: darkcyan;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     border: solid rgb(255, 255, 255);
     border-width: 1px;
     width: 150px;
@@ -55,9 +55,10 @@ p {
     align-content: center;
     align-items: center;
 }
+
 .button:hover {
     background-color: rgb(104, 245, 245);
-    color:#000000;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -68,13 +69,14 @@ a {
 }
 
 a:hover {
-color: black;
+    color: black;
 }
 
 .outerContainer {
     background-color: white;
 
 }
+
 .headerImage {
     background-image: url("https://cc-west-blog-assets.s3.amazonaws.com/uploads/2017/10/1-editing-your-own-writing.png");
     background-position: center;
@@ -84,8 +86,23 @@ color: black;
     text-align: end;
     padding: 10px;
 }
+
 .centeredText {
     text-align: center;
     margin: 10px;
     padding: 10px;
+}
+
+.formBox {
+    background-color: rgba(222, 184, 135, 0.356);
+    color: black;
+    border: solid black;
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+
+.centerBox {
+    display: flex;
+    justify-content: center;
 }
