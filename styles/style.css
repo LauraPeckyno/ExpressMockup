@@ -14,3 +14,59 @@ h1 {
 p {
     background-color: blanchedalmond;
 }
+
+.menu {
+    display:flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    background-color: white;
+    color:black;
+    text-align: center;
+    padding: 15px;
+    align-content: center;
+    align-items: center;
+}
+
+.menuPush {
+    display:flex;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    background-color: white;
+    color:black;
+    text-align: center;
+    padding: 15px;
+    align-content: center;
+    align-items: center;
+}
+
+.button {
+    background-color: darkcyan;
+    color:rgb(255, 255, 255);
+    border: solid rgb(255, 255, 255);
+    border-width: 1px;
+    width: 150px;
+    height: 40px;
+    text-decoration: none;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+}
+.button:hover {
+    background-color: rgb(104, 245, 245);
+    color:#000000;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+
+}
+
+a:hover {
+color: black;
+}
+
+.logo {
+
+}
