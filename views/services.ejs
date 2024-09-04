@@ -9,22 +9,24 @@
         <link rel="stylesheet" href="/style.css">
     </head>
     <body>
-        <div class="menu">
-            <div class="menuPush">
-                        <div class="button"><a
-                        href="/home">Home</a></div>
-                        <div class="button"><a
-                        href="/about">About</a></div>
-                        <div class="button"><a
-                        href="/services">Services</a></div>
-                        <div class="button"><a href="contact">Contact</a></div>
+        <div class="head">
+            <div class="menu">
+                <div class="menuPush">
+                            <div class="button"><a
+                            href="/home">Home</a></div>
+                            <div class="button"><a
+                            href="/about">About</a></div>
+                            <div class="button"><a
+                            href="/services">Services</a></div>
+                            <div class="button"><a href="contact">Contact</a></div>
+                </div>
+                <div class="logo"><img
+                        src="https://cdn.myportfolio.com/587132521eca77539c33727505c79a3e/a94af245-795e-4986-adf2-b19fd16c7851_rw_1200.png?h=fc90dbf5ab55dd9ccac9227140d55444"
+                        width="350px" height="200px" /></div>
+            </div><div class="headerImage"></div>
             </div>
-            <div class="logo"><img
-                    src="https://cdn.myportfolio.com/587132521eca77539c33727505c79a3e/a94af245-795e-4986-adf2-b19fd16c7851_rw_1200.png?h=fc90dbf5ab55dd9ccac9227140d55444"
-                    width="350px" height="200px" /></div>
-        </div>
         <h1><%= servicesData.title %></h1>
-        <p><%= servicesData.serviceOptions %></p>
+        <div class="outerContainer"><p><%= servicesData.serviceOptions %></p></div>
         <script src="" async defer></script>
     </body>
 </html>
