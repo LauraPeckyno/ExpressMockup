@@ -56,6 +56,7 @@ app.get('/about', (req, res) => {
 
 app.get('/services', (req, res) => {
   res.render('services', { servicesData });  // rendering the data for this view
+  console.log(servicesData);
 });
 
 app.post('/contact', (req, res) => {
